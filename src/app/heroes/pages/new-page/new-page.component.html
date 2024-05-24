@@ -8,14 +8,26 @@
   <div class="col-12 sm:col-6">
     <mat-card>
       <mat-card-content>
-        <form class="grid">
+        <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Super Heroe</mat-label>
-            <input matInput placeholder="Super Heroe" type="text" required />
+            <input
+              matInput
+              placeholder="Super Heroe"
+              type="text"
+              required
+              formControlName="superhero"
+            />
           </mat-form-field>
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Alter Ego</mat-label>
-            <input matInput placeholder="Alter Ego" type="text" required />
+            <input
+              matInput
+              placeholder="Alter Ego"
+              type="text"
+              required
+              formControlName="alter_ego"
+            />
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Primera Aparicion</mat-label>
@@ -24,15 +36,26 @@
               placeholder="Primera Aparicion"
               type="text"
               required
+              formControlName="first_appearance"
             />
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Personajes</mat-label>
-            <input matInput placeholder="Personajes" type="text" required />
+            <input
+              matInput
+              placeholder="Personajes"
+              type="text"
+              required
+              formControlName="characters"
+            />
           </mat-form-field>
           <mat-form-field class="col-12">
             <mat-label>Creador</mat-label>
-            <mat-select placeholder="Creador" required>
+            <mat-select
+              placeholder="Creador"
+              required
+              formControlName="publisher"
+            >
               <mat-option
                 *ngFor="let publisher of publishers"
                 [value]="publisher.id"
@@ -41,11 +64,22 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+
+
+          <mat-form-field class="col-12">
+            <mat-label>Alternative Image</mat-label>
+            <input
+              matInput
+              placeholder="Alternative Image"
+              type="text"
+              formControlName="alt_img"
+            />
+          </mat-form-field>
         </form>
 
         <div class="flex justify-content-between">
           <button mat-flat-button color="warn">Borrar</button>
-          <button mat-flat-button color="primary">Guardar</button>
+          <button mat-flat-button color="primary" (click)="onSubmit()">Guardar</button>
         </div>
       </mat-card-content>
     </mat-card>

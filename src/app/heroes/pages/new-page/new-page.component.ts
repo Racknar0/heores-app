@@ -32,4 +32,12 @@ export class NewPageComponent {
 
   ];
 
+
+  onSubmit() : void {
+    console.log({
+      formIsValid: this.heroForm.valid,
+      formValue: this.heroForm.value
+    })
+  }
+
 }
