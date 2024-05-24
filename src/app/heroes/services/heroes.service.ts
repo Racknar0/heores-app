@@ -34,4 +34,25 @@ export class HerosService {
         )
       );
   }
+
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`${this.baseUrl}/heroes`, hero);
+  }
+
+  updateHero(hero: Hero): Observable<Hero> {
+    if (!hero.id) {
+      throw new Error('Hero ID is required');
+    }
+    return this.http.patch<Hero>(`${this.baseUrl}/heroes/${hero.id}`, hero);
+  }
+
+  deleteHero(id: string): Observable<boolean> {
+    if (!id) {
+      throw new Error('Hero ID is required');
+    }
+    return this.http.delete(`${this.baseUrl}/heroes/${id}`).pipe(
+      catchError((err) => of(false)),
+      map((res) => true)
+    );
+  }
 }

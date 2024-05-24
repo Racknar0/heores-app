@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Publisher } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'app-new-page',
@@ -6,6 +8,17 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class NewPageComponent {
+
+  // Este es el formulario Reactivo que se usará en la vista
+  public heroForm = new FormGroup({
+    id:               new FormControl<string>(''),
+    superhero:        new FormControl<string>('', {nonNullable: true}),
+    publisher:        new FormControl<Publisher>(Publisher.DCComics),
+    alter_ego:        new FormControl(''),
+    first_appearance: new FormControl(''),
+    characters:       new FormControl(''),
+    alt_img:          new FormControl('')
+  })
 
   public publishers  = [
     {
