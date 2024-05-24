@@ -1,0 +1,37 @@
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+<div *ngIf="hero; else divLoading" class="grid mt-5 p-2">
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-title>{{hero.alter_ego}}</mat-card-title>
+    <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+    <img [src]="hero | heroImage" [alt]="hero.superhero" mat-card-image />
+  </mat-card>
+
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-title>Informacion del Heroe</mat-card-title>
+    <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+    <mat-card-content>
+      <mat-list-item><strong>Primera aparición:</strong> {{hero.first_appearance}}</mat-list-item>
+      <mat-list-item><strong>Publisher:</strong> {{hero.publisher}}</mat-list-item>
+      <mat-list-item><strong>Alter Ego:</strong> {{hero.alter_ego}}</mat-list-item>
+      <mat-list-item><strong>Characters:</strong> {{hero.characters}}</mat-list-item>
+
+      <mat-divider></mat-divider>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="goBack()"
+      >
+        <mat-icon>arrow_back</mat-icon>
+        <span>Regresar</span>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
+<pre>{{ hero | json }}</pre>

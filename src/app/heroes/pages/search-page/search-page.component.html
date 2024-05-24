@@ -1,0 +1,24 @@
+<div class="flex flex-column p-5">
+  <h3>Buscador</h3>
+  <mat-form-field>
+    <mat-label>Buscar héroe</mat-label>
+    <input
+      matInput
+      type="text"
+      [formControl]="searchInput"
+      (input)="searchHero()"
+      [matAutocomplete]="auto"
+    />
+
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectedOption($event)">
+      <mat-option *ngFor="let hero of heroes" [value]="hero">{{
+        hero.superhero
+      }}</mat-option>
+      <mat-option *ngIf="heroes.length === 0" [value]="null">
+        No hay resultados
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <p>Selected: {{ selectedHero | json }}</p>
+</div>
