@@ -21,7 +21,8 @@
       "publisher": "DC Comics",
       "alter_ego": "Kal-El",
       "first_appearance": "Action Comics #1",
-      "characters": "Kal-El"
+      "characters": "Kal-El",
+      "alt_img": "https://hips.hearstapps.com/hmg-prod/images/henry-cavill-superman-64e5f44558477.jpg?crop=0.627xw:1.00xh;0.181xw,0&resize=1200:*"
     },
     {
       "id": "dc-flash",
@@ -166,6 +167,33 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "d807",
+      "superhero": "asdsad",
+      "publisher": "DC Comics",
+      "alter_ego": "asdasd",
+      "first_appearance": "asdasd",
+      "characters": "asdasd",
+      "alt_img": "sadsadsad"
+    },
+    {
+      "id": "7c58",
+      "superhero": "Camilo",
+      "publisher": "DC Comics",
+      "alter_ego": "Torres",
+      "first_appearance": "Coderhouse 2022",
+      "characters": "Camilo Super",
+      "alt_img": "https://yt3.googleusercontent.com/rUHKFS8Ay0GgPEi_4fEV0CT50yQUwZl2ZWpKNsrS6RtSpwLPvzPiZtHSkPBWlSS8kKb61p46y18=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "55a2",
+      "superhero": "super hero",
+      "publisher": "DC Comics",
+      "alter_ego": "ego",
+      "first_appearance": "sdafdsf",
+      "characters": "dsff",
+      "alt_img": ""
     }
   ]
 }
