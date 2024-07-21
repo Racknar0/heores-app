@@ -1,4 +1,3 @@
-
 <div class="flex flex-column">
   <span class="text-lg mb-4 text-center">Login</span>
   <mat-form-field>
@@ -9,7 +8,7 @@
     <mat-label>Contraseña</mat-label>
     <input type="password" matInput placeholder="Contraseña" />
   </mat-form-field>
-  <button mat-raised-button color="primary">
+  <button mat-raised-button color="primary" (click)="onLogin()">
     <mat-icon>login</mat-icon>
     Iniciar Sesión
   </button>
