@@ -5,7 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 import { Hero, Publisher } from '../../interfaces/hero.interface';
 import { HerosService } from '../../services/heroes.service';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap, filter } from 'rxjs/operators';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -105,9 +105,15 @@ export class NewPageComponent implements OnInit {
       data: this.heroForm.value,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log({result});
+    dialogRef.afterClosed()
+    .pipe(
+      filter((res : boolean) => res),
+      switchMap(() => this.herosService.deleteHero(this.currentHero.id)),
+      filter((wasDeleted: boolean) => wasDeleted)
+    )
+    .subscribe(() => {
+        this.showSnackBar('Héroe eliminado');
+        this.router.navigate(['/heroes']);
     });
   }
 
